@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   const getBalance = async () => {
     const response = await fetch(
-      'http://localhost:3000/api/v1/account/balance',
+      'https://monopoly-backend.onrender.com/account/balance',
       {
         method: 'GET',
         headers: {
@@ -31,7 +31,7 @@ const Dashboard = () => {
 
   const getUsers = async () => {
     const response = await fetch(
-      `http://localhost:3000/api/v1/user/bulk?filter=${filter}`,
+      `https://monopoly-backend.onrender.com/user/bulk?filter=${filter}`,
       {
         method: 'POST',
         body: JSON.stringify({ id: user._id }),

@@ -11,16 +11,19 @@ function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/api/v1/user/signup', {
-      method: 'POST',
-      body: JSON.stringify({
-        firstName: firstName,
-        lastName: lastName,
-        username: email,
-        password: password,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+    const response = await fetch(
+      'https://monopoly-backend.onrender.com/user/signup',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          username: email,
+          password: password,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
 
     if (response.ok === true) {
       toast.success('Registration Successful');

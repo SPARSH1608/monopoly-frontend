@@ -10,14 +10,17 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/api/v1/user/signin', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: email,
-        password: password,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
+    const response = await fetch(
+      'https://monopoly-backend.onrender.com/user/signin',
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          username: email,
+          password: password,
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
 
     if (response.ok === true) {
       const data = await response.json();

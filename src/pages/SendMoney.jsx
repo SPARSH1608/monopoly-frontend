@@ -14,7 +14,7 @@ const SendMoney = () => {
 
   const submit = async () => {
     const response = await fetch(
-      'http://localhost:3000/api/v1/account/transfer',
+      'https://monopoly-backend.onrender.com/account/transfer',
       {
         method: 'POST',
         body: JSON.stringify({
